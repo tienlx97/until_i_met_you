@@ -8,6 +8,14 @@ export const countdownContainer = css({
   textAlign: 'center',
   paddingX: '20px',
   paddingY: '40px',
+  height: '100%',
+  width: '100%',
+})
+
+export const contentWrapper = css({
+  position: 'relative',
+  zIndex: 1,
+  color: 'white',
 })
 
 export const countdownTitle = css({
@@ -28,6 +36,16 @@ export const countdownTimer = css({
   gap: '20px',
 })
 
+export const bgImageStyle = css({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  height: '100%',
+  width: '100%',
+  zIndex: 0,
+  objectFit: 'cover',
+})
+
 export const FlipCountDown = ({ startTime, endTime, title }) => {
   const onFinish = () => {
     alert('Time is up!')
@@ -41,12 +59,21 @@ export const FlipCountDown = ({ startTime, endTime, title }) => {
 
   return (
     <div className={countdownContainer}>
-      <h2 className={countdownTitle}>{title}</h2>
-      <div className={countdownTimer}>
-        <TimeBox value={days} label="Days" />
-        <TimeBox value={hours} label="Hours" />
-        <TimeBox value={minutes} label="Minutes" />
-        <TimeBox value={seconds} label="Seconds" />
+      <img
+        className={bgImageStyle}
+        src="/count-down-bg.jpg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div className={contentWrapper}>
+        <h2 className={countdownTitle}>{title}</h2>
+        <div className={countdownTimer}>
+          <TimeBox value={days} label="Days" />
+          <TimeBox value={hours} label="Hours" />
+          <TimeBox value={minutes} label="Minutes" />
+          <TimeBox value={seconds} label="Seconds" />
+        </div>
       </div>
     </div>
   )

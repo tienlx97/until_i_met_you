@@ -2,8 +2,29 @@
 
 import { css } from '../../../../styled-system/css'
 
+// const countdownBox = css({
+//   background: '#222',
+//   color: '#fff',
+//   padding: '12px 16px',
+//   borderRadius: '10px',
+//   minWidth: '80px',
+//   textAlign: 'center',
+//   flex: '1 1 100px',
+//   transition: 'transform 0.3s ease',
+
+//   _hover: {
+//     transform: 'scale(1.05)',
+//   },
+
+//   mobile: {
+//     padding: '15px 20px',
+//   },
+// })
+
 const countdownBox = css({
-  background: '#222',
+  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  backdropFilter: 'blur(4px)',
+  border: '1px solid rgba(255, 255, 255, 0.1)',
   color: '#fff',
   padding: '12px 16px',
   borderRadius: '10px',
