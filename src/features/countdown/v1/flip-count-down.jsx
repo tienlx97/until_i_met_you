@@ -3,6 +3,7 @@
 import { getDHMS, useCountDown } from '@/hooks/use-count-down'
 import { TimeBox } from './time-box'
 import { css } from '../../../../styled-system/css'
+import Image from 'next/image'
 
 export const countdownContainer = css({
   textAlign: 'center',
@@ -59,11 +60,12 @@ export const FlipCountDown = ({ startTime, endTime, title }) => {
 
   return (
     <div className={countdownContainer}>
-      <img
+      <Image
         className={bgImageStyle}
         src="/count-down-bg.jpg"
         alt=""
         aria-hidden="true"
+        fill
       />
 
       <div className={contentWrapper}>
